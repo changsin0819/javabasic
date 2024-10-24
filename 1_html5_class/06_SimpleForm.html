@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_SimpleForm</title>
+</head>
+<body>
+	<!-- @@@@ 사용자의 입력값과 선택값을 서버로 전송하려면 form 태그 안에 있어야 함 -->
+	<!-- 일반적으로 프론트엔드(브라우저)에서 요소를 찾을 때는 아이디, 클래스명으로 찾음 -->
+	<!-- 서버에서 클라이언트에서 보낸값을 받을 때는 name값으로 찾음 -->
+	<!-- 웹에서 method : 데이타 전송 방식 (get-기본값 / post) -->
+	<form action = 'server.jsp' method ='post'>
+		<fieldset>
+			<legend>회원가입</legend>
+				<ol>
+					<li>
+						<label for = 'irum'>이름</label>
+						<input id = 'irum' name = 'irum'  type = 'text'><!-- id = 'irum' --><!-- class = 'irum' -->
+					</li>
+					<li>
+						<label for = 'gender'>성별</label>
+						<input id = 'gender' type ='radio' name = 'gender' value = '남자'>남자
+						<input id = 'gender' type ='radio' name = 'gender' value = '여자' checked>여자
+					</li>
+					
+					<li>
+						<label for = 'job'>직업</label>
+						<select id='job' name = 'job'>
+						<option>개발자</option>
+						<option>코더</option>
+						<option selected>프로그래머</option>
+						</select>
+					</li>
+					
+					<li>
+					<label for ='hobby'>취미</label>
+					<input id='hobby' type="checkbox" name='hobby' value= '잠자기'>잠자기
+					<input id='hobby' type="checkbox" name='hobby' value= '먹기'>먹기
+					<input id='hobby' type="checkbox" name='hobby' value= '숨쉬기'>숨쉬기
+					<input id='hobby' type="checkbox" name='hobby' value= '멍때리기'>멍때리기
+					</li>
+					
+					<li>
+					<label for='lover'>애인</label>
+					<input id = 'lover' type ='radio' name = 'lover' value = '있다'>있다
+					<input id = 'lover' type ='radio' name = 'lover' value = '없다'>없다
+					</li>
+			
+					<li>
+						<input type='submit' value ='확인'>
+						<input type='reset'  value ='취소'>
+					</li>
+				</ol>
+			
+		</fieldset>
+	</form>
+</body>
+</html>
