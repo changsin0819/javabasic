@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 함수 만들기</title>
+	<script>
+	// 1. function 명령어
+	function first()
+	{
+		let txt = document.querySelector("#first");
+		txt.style.background = 'red';
+		txt.style.color = 'white';
+	}
+	
+	// 2. 함수 리터럴
+	let second = function()
+	{
+		let txt = document.querySelector("#second");
+		txt.style.background = '#ee99ff';
+		txt.style.color = 'white';
+	}
+	
+	// 3. 애로우 함수
+	let third = () => {
+						  let txt2 = document.querySelector("#fourth");
+						  txt.style.background = '#ffeeff';
+						  txt.style.color = 'red';
+					  }
+	
+	</script>
+</head>
+
+<body>
+	<p> <span id="first"> 1. function 명령 </span>
+		<input type="button" value="확인" onclick="javascript:first()"/>
+	</p>
+	<p> <span id="second"> 2. 함수 리터럴 </span>
+		<input type="button" value="확인" onclick="javascript:second()"/>
+	</p>
+	<p> <span id="fourth"> 3. 애로우 함수 </span>
+		<input type="button" value="확인" onclick="javascript:third()"/>
+	</p>
+</body>
+</html>

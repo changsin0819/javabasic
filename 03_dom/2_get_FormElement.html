@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Document 예제 </title>
+<meta charset="UTF-8">
+<style type="text/css">
+ body { 
+		background-color: #ffcc33;
+		color: #2222ff;
+	} 	
+</style>
+
+<script type="text/Javascript">
+	window.onload = function()
+	{
+    	document.getElementById('btn').onclick = function()
+    	{
+    		// [1]	id로 찾기
+    		//var userName = document.getElementById('userName').value; // 요소에서 밸류값을 바로가져와 변수에 저장
+    		//var userName = document.querySelector('#userName').value;
+    		
+    		//var result = document.getElementById('result');
+    		//result.innerHTML = userName + '하이';
+    		
+    		// [2]	name 찾기 (단, form 필요)
+    		//var irum = document.frm.username.value;
+    		//var irum = document.forms[0].username.value;	// forms는 모든 요소를 가져오기에 배열로 찾아야한다.
+    		//var result = document.getElementById('result');
+    		//result.innerHTML = irum + '하이3';
+			
+    		// [3] class로 찾기
+    		var name = document.getElementByClassName('username')[0].value;
+    		var result = document.getElementById('result');
+    		var age = document.getElementById('age');
+    		var age_attr = age.getAttribute('age');
+    		
+    		result.innerHTML = name + '하이4' + age_attr + '살입니다';
+    		
+    	}
+    }
+</script>
+</head>
+
+<body>
+	<!-- 폼태그 안에 있는 입력값은 서버로 전송할 수 있다  -->
+	<form name="frm">
+		<div id='age' age='100'></div>
+		당신의 이름은? <input type="text" id='userName' class ='username' name='username' size="20">
+		<input type="button" value="확인" id='btn'>
+   	</form>
+	<div id='result'></div>
+</body>
+</html>
+
+<!--  이벤트바인딩방식을 이벤트 핸들러 방식으로 변경 -->

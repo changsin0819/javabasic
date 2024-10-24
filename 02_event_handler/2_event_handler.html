@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 핸들러 연결 </title>
+
+	<script type="text/javascript">
+	
+	window.onload = function()						//	화면이 실행되었을 때 
+	{
+		var btn = document.getElementById('btn');	// html문서에서 'btn'이라는 아이디를가진 요소를 가져와서 btn 변수에 저장
+		btn.onclick = function()					// btn변수에 이벤트핸들러 연결
+		{
+			alert('확인1');
+		}	
+	
+	/* 
+		//btn.onclick = xxxx();		// 이벤트가 일어났을때 함수를 호출하는게아니라 함수를 바로 호출
+		btn.onclick = xxxx;
+		function xxxx() 
+		{
+			alert('확인2');
+		} 
+	*/
+	
+	}
+	</script>
+</head>
+
+<body>
+	<input type='button' value='눌러'  id='btn' >
+</body>
+</html>

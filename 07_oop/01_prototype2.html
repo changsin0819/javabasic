@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향2 </title>
+</head>
+<body>
+<script>
+let Student = function (name,kor,eng,math){
+					this.name = name;
+					this.kor = kor;
+					this.eng = eng;
+					this.math = math;
+				}
+	
+/* 
+Student.prototype.sum = function(){
+	return this.kor + this.eng + this.math;
+}
+
+Student.prototype.showInfo = function() {
+	return this.name + '==>' + this.sum() +'<br/>';
+}
+ */
+Student.prototype = {
+		sum : function(){
+			return this.kor + this.eng + this.math;
+		}
+		,showInfo : function() {
+			return this.name + '==>' + this.sum() +'<br/>';
+		}
+}
+
+
+let s1 = new Student ('kim',90,80,77);
+document.write(s1.name + '님의 총점 : ' + s1.sum() + '점 입니다<br/>');
+
+let s2 = new Student ('park',50,50,57);
+document.write(s2.name + '님의 총점 : ' + s2.sum() + '점 입니다<br/>');
+
+
+document.write(s1['showInfo']());
+document.write(s2['showInfo']());
+
+</script>
+</body>
+</html>

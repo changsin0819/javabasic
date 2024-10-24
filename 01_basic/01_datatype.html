@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 자료형</title>
+<script type="text/javascript">
+
+/* 1. 자바스크립트는 데이터타입에 관대하다
+     변수를 선언할 때 데이타타입을 정하지 않는다
+		(1) 변수 선언 : var
+		
+		중복선언 가능하고 값을 바꾸때마다 자료형을 바꿀수 있다.
+		전체 범위(scope)를 인식한다
+*/
+      /* var bs ='문자열';
+     console.log("변수의 값:" + bs);
+     document.write("변수의 값:" + bs+"<br/>");
+     document.write(typeof bs);
+
+     bs=1000;
+     document.write("변수의 값:" + bs+"<br/>");
+     document.write(typeof bs);					// type of 변수의 자료형 확인
+     
+     var bs=35.6;
+     document.write("변수의 값:" + bs+"<br/>");
+     document.write(typeof bs);  */
+     
+/*   (2) let  (es6)
+ 		- 변수의 중복 선언을 허용하지 않는다
+ 		- 블럭 범위(scope)를 인식한다 -> 나중에 확인
+ */
+
+/*  let bs ='문자열';
+ console.log("변수의 값:" + bs);
+ document.write("변수의 값:" + bs+"<br/>");
+ document.write(typeof bs);
+ 
+ bs=1000;
+ document.write("변수의 값:" + bs+"<br/>");
+ document.write(typeof bs);
+  */
+ /* var bs=35.6;
+ document.write("변수의 값:" + bs+"<br/>");
+ document.write(typeof bs); */  //
+
+ /* (3) const : 상수선언 (es6)
+	- 값을 재대입 금지
+	- 명명 권장 : 모두 대문자에 단어사이는 _로 표시
+*/
+
+/* const bs ='문자열';
+console.log("변수의 값:" + bs);
+document.write("변수의 값:" + bs+"<br/>");
+document.write(typeof bs);
+ 
+bs=1000;
+document.write("변수의 값:" + bs+"<br/>");
+document.write(typeof bs); */
+//변수와 상수는 나눠서 쓸것
+
+ //[참고]
+/*   const data =[1,2,3]; //상수는 값을 정해 놓으면 바꿀수 없다.
+  //data=[11,22,33];
+  data[1]= 100;
+  document.write(data);
+   */
+//----------------------------------------------------------------
+// 2. 리터럴 - 변수의 값
+/*  var   arr = [ '안녕', 'Hello', 'Hola', '아쌀라무 알라이꿈' ];
+
+   document.write("배열의 값"+arr[3] +"<br/>");
+ 		
+var   arr2 = [ '안녕', [ 'Hello', '아쌀라무 알라이꿈' ], 'Hola' ];
+
+document.write("배열의 값"+arr2[1][1]+"<br/>");
+
+var  obj = { x : '안녕',  y : 'Hello' ,  z : '곤니찌와' };
+
+document.write("객체의 값"+ obj.x+"<br/>");
+document.write("객체의 값"+ obj['x']+"<br/>");//중요
+
+var abc;
+document.write(abc);
+document.write("객체의 값"+ obj.a+"<br/>");  */
+
+
+//-------------------------------------------------------
+/* 3. 분할 대입 (destructuring assignment) : (es6)
+ 			- 배열과 객체의 요소를 분할하는 부분
+ 		(1) 배열 분할
+ */
+/*   var data = [10, 20, 30, 40, 50];
+ var a0 = data[0];
+ var a1 = data[1];
+ var a2 = data[2];
+ document.writeln(a0+ a1+ a2 + "<br/>");  
+ console.log(a0, a1, a2 ); */
+ 
+var[a,b,c]= [10, 20, 30, 40, 50];
+ document.writeln(a+"<br/>");
+ document.writeln(c+"<br/>");
+ 
+ var[a,b, ...other]= [10, 20, 30, 40, 50];
+ document.writeln(a+"<br/>");
+ document.writeln(other+"<br/>");
+ 
+ let v1 = 100;
+ let v2 = 200;
+ [v2,v1]=[v1,v2]// 값을 변경할때 이렇게도 가능하다
+
+ document.write('v1:'+v1+'v2:'+v2);
+ 
+ /*  (2) 객체 분할*/
+  
+let book={title:'채식주의자',publish:'문학',price:1000};
+let{price,title,writer='작가미상'}=book;
+document.write('제목'+title+'<br/>');
+document.write('가격'+price+'<br/>'); //이름으로 찾아주기 때문에 순서는 상관없다
+document.write('작가'+writer+'<br/>');
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+		
+	 // 1. 글로벌 변수와 지역변수
+	  
+	 /* 
+	 let scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 let scope = '지역 변수';
+		 return scope;
+	 }
+	 document.write('1>' + getValue() + '<br/>');	// '지역 변수'
+	 document.write('2>' + scope + '<br/>');		// '글로벌 변수'  
+	 */
+	 
+	 
+	 // 2. [권장하지 않음] let 생략 불가	==> 생략시 var취급 하여 글로벌 변수 취급
+	 
+	  
+	 /* 
+	 let scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 let scope = '지역 변수';
+		 test  = '테스트';
+		 return scope;
+	 }
+	 document.write('1>' + getValue() + '<br/>');	// '지역 변수'
+	 document.write('2>' + scope + '<br/>');		// '글로벌 변수' 
+	 document.write('3>' + test + '<br/>');	 	    // let 선언을 하지않으면 var가 생략된걸로 취급하여 글로별 변수취급
+	  */
+	 
+	 // 3. 지역변수는 반드시 var 선언
+	 //			=> 지역변수는 반드시 함수 앞단에 선언하기
+	 /*
+	 		[호이스팅 : 끌어올리기] 
+	 			변수에 값이 넣어진 상태에서 끌어올려지는게 아니라
+	 			변수만 끌어올려진 후 값이 들어간다.
+	 			
+	 			let 선언한 변수는 호이스팅이 되지 않는다.
+	 */
+	  
+	/*  
+	let scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 document.write('0>' + scope + '<br/>');	
+		 
+		 let scope = '지역 변수';
+		 
+		 document.write('0>' + scope + '<br/>');	
+		 
+		 return scope;
+	 }
+	 document.write('2>' + scope + '<br/>');		// '글로벌 변수'
+	 document.write('1>' + getValue() + '<br/>');	// 에러 
+	 */
+	   
+	 
+	 
+	  // 4. let 의 지역변수는 들어가있는 블럭에서만 유효하다
+	 function test()
+	 {
+		let a = 10; 
+	 }
+	 document.write ('a= '+ a + '<br/>'); 
+	 
+	 /* if(true)
+	 {
+		let b = 20;
+		document.write ('b= ' + b + '<br/>');
+	 }
+	 document.write ('b= ' + b + '<br/>');
+	 
+	 for(let i=0;i<3; i++)
+	 {
+		 document.write('i='+i+'<br/>');
+	 }
+	 for(let i=0;i<5; i++)
+	 {
+		 document.write('i='+i+'<br/>');
+	 }
+	 document.write('i='+i+'<br/>');  */
+	 
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

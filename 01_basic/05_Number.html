@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+/* var su = 123.456789;
+document.writeln( su.toExponential(2)  + "<br/>" );	
+document.writeln( su.toFixed(3)  + "<br/>" );		 // 소숫점 자리수만 따진다
+document.writeln( su.toFixed(7) + "<br/>" );	
+document.writeln( su.toPrecision(6)  + "<br/>" );	 // 전체 자리수를 따진다
+document.writeln( su.toPrecision(10)  + "<br/>" );	
+ */
+//-------------------------------------------------
+// 2. 형변환
+/* var n = '123'; */
+/* var n = '123a'; */
+/* var n = 'a123'; */
+ var n = '12a3';
+document.writeln( Number(n) + "<br/>");
+document.writeln( parseInt(n) + "<br/>");
+document.writeln( parseFloat(n) + "<br/>");
+
+//document.writeln( parsedouble(n) + '<br/>');  존재하지 않음
+//document.writeln( '오늘도 행복합시다<hr/>');
+
+// [ 확인 ]
+// 		number + string => string
+var v = 123 + '4';
+document.writeln( v + '<br/>' );
+document.writeln( typeof v + '<br/>' );
+
+// 		number - String => number
+var v2 = 123 - '4';
+document.writeln( v2 + '<br/>' );
+document.writeln( typeof v2 + '<br/>' );
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+<!-- 
+		컴파일 언어 : c, java
+		
+				   source code ( xxx.c, xxx.java )
+				      -> 컴파일 (번역) 파일 필요 ( xxx.obj, xxx.class )
+				   실행시에는 컴파일된 파일을 실행
+		
+		인터프리터 언어 : python, javascript
+					  		-> 컴파일 파일 필요없음
+					  실행시 한줄한줄 읽으면서 실행
+ -->

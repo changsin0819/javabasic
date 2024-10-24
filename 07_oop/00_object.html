@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>00_object.html</title>
+
+<!-- 함수도 리터럴이다 -->
+
+<script type="text/javascript">
+
+
+/* 
+	객체 리터럴 
+		` 장점 : 별도의 클래스 구조 없이 객체 작성이 가능하고 구성이 자유롭다
+		` 단점 : 구조를 정의한 적이 없다는것은 구조 파악이 어렵다 ( 재사용이 어렵다 )
+*/
+
+/* let member = {
+				name : '홍길동'				// 멤버변수 선언
+				, birth : '2000-01-01'
+				, output : function()
+				{
+					return this.name + ' / 생일: ' + this.birth + '<br/>';
+				}
+				
+				
+				
+				
+				 output()
+				{
+					return this.name + ' / 생일: ' + this.birth + '<br/>';
+				} 
+			 };   // 객체를 member에 저장
+
+document.write(member.output()); 
+document.write(member['output']());		 
+*/
+
+// 객체를 선언하고 구조를 잡음
+let obj1 = {
+			   name : '홍길순'
+			   ,age : 44
+		   };
+
+// 객체에 함수 추가
+obj1.display = function()
+{
+		return this.name + '님 ' + this.age +'살 입니다<br/>';
+}
+
+document.write(obj1.display());
+
+// 객체를 선언하고 빈구조로 만듬
+
+// let obj2 = {};
+let obj2 = new Object();
+
+// 변수와 함수를 나중에 추가
+obj2.name = '홍길자';
+obj2.age = '33';
+obj2['display'] = function()
+{
+	return this.name + '님 ' + this.age +'살 입니다<br/>';
+}
+
+document.write(obj2['display']());
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

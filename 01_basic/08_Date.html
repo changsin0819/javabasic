@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	/* 
+	var d = new Date('2024/12/25');
+	document.writeln( d  + '<br/>');
+	document.writeln( d.getYear()  + '<br/>');			
+	document.writeln( d.getFullYear()  + '<br/>');		// 연도를 뽑을땐 반드시 getfullyear
+	document.writeln( d.getMonth() + 1  + '<br/>');		// month 는 + 1 해야한다
+	document.writeln( d.getDate()  + '<br/>');			// 날짜를 뽑아주는함수
+	document.writeln( d.getDay()  + '<br/>');			// 요일을 뽑아주는함수(숫자로 나옴)
+
+	// 아무것도 쓰지않았을때 현재 날짜와 시간을 지정
+	var d = new Date();				
+	
+	// setter를 이용하여 날짜, 시간 지정
+	d.setFullYear(2024);
+	//d.setMonth(12); -> 1월로 넘어감
+	d.setMonth(11);
+	d.setDate(25);
+	
+	document.writeln( d  + '<br/>');
+	document.writeln( d.toLocaleString()  + '<br/>');
+	document.writeln( d.toGMTString()  + '<br/>');
+	document.writeln( d.toDateString()  + '<br/>');
+	
+	var today = new Date();
+	//today.setMonth( today.getMonth() - 3 );
+	today.setDate( today.getDate() + 20 );
+	document.writeln( today.toDateString() + '<br/>');
+	 */
+	
+	//-----------------------------------------
+	// 날짜 비교
+	const date1 = new Date('2024-10-21');
+	const date2 = new Date('2024-10-22');
+	
+	console.log(date1 > date2);
+	console.log(date1 >= date2);
+	console.log(date1 < date2);
+	console.log(date1 <= date2);
+	
+	// [ 중요 ]
+	const date3 = new Date('2024-10-21');
+	const date4 = new Date('2024-10-21');
+	console.log(date3 == date4);		// 주소를 비교하는 것
+	console.log(date3 === date4);
+	console.log('>' + date3);
+	console.log('>' + date4);
+	// 객체 상태여서 주소값을 비교하기때문에 값을 추출하여 비교해주어야 한다.
+	console.log( date3.getTime() == date4.getTime() );
+	console.log( date3.getTime() === date4.getTime() );
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

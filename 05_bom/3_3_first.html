@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3_3_first.html(본판)</title>
+		<script type="text/javascript">
+		window.onload = function()
+		{
+			let second = open('3_3_second.html','second','width=500 height=500 left=700 top=200');
+			let sel = frm.sel;
+			sel.onchange = function()
+			{
+				second.fm.text.value = this.value;
+			}
+		
+		}
+		
+		</script>
+	</head>
+<!------------------------------------------------>
+	<body>
+		<form name='frm'>
+			<select name='sel'>
+				<option>서울시</option>
+				<option>경기도</option>
+				<option>강원도</option>
+			</select><br/><br/>
+			<input type='text' name='txt' id='txt' class = 'txt'>
+		</form>
+	</body>
+</html>

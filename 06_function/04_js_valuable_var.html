@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+		
+	 // 1. 글로벌 변수와 지역변수
+	/*  
+	 var scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 var scope = '지역 변수';
+		 return scope;
+	 }
+	 document.write('1>' + getValue() + '<br/>');	// '지역 변수'
+	 document.write('2>' + scope + '<br/>');		// '글로벌 변수' 
+	 */
+	 
+	 // 2. [권장하지 않음] var 생략 가능	==> var 를 생략하면 전부 '글로벌 변수'로 취급
+	 
+	 /* 
+	 scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 scope = '지역 변수';
+		 test  = '테스트';
+		 return scope;
+	 }
+	 document.write('1>' + getValue() + '<br/>');	// '지역 변수'
+	 document.write('2>' + scope + '<br/>');		// '지역 변수' 
+	 document.write('3>' + test + '<br/>');	 	    // var를 생략했기때문에 글로벌변수 취급하여 함수내에 있어도 출력됨
+	 */	
+	 
+	 // 3. 지역변수는 반드시 var 선언
+	 //			=> 지역변수는 반드시 함수 앞단에 선언하기
+	 /*
+	 		[호이스팅 : 끌어올리기] 
+	 			변수에 값이 넣어진 상태에서 끌어올려지는게 아니라
+	 			변수만 끌어올려진 후 값이 들어간다.
+	 */
+	/*  
+	scope = '글로벌 변수';
+	 function getValue()
+	 {
+		 document.write('0>' + scope + '<br/>');	// 'undefined'
+		 
+		 var scope = '지역 변수';
+		 
+		 document.write('0>' + scope + '<br/>');	// '지역 변수'
+		 
+		 return scope;
+	 }
+	 document.write('1>' + getValue() + '<br/>');	// '지역 변수'
+	 document.write('2>' + scope + '<br/>');		// '글로벌 변수'  
+	 */
+	 
+	 // 4. var 의 지역변수는 함수 블럭에서만 유효하다
+	 function test()
+	 {
+		 var a = 10; 
+	 }
+	 // document.write ('a= '+ a + '<br/>');
+	 
+	 // for문과 if문 안의 var는 글로벌 변수 취급 한다
+	 if(true)
+	 {
+		var b = 20;
+	 }
+	 document.write ('b= ' + b + '<br/>');
+	 
+	 for(var i=0;i<3; i++)
+	 {
+	 
+	 }
+	 for(var i=0;i<5; i++)
+	 {
+		 
+	 }
+	 document.write('i='+i+'<br/>');
+	 
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

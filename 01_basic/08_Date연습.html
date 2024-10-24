@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script type="text/javascript">
+	
+window.onload = function()		// 화면이 실행되었을때
+{
+	var btn = document.getElementById('btn'); // btn 변수에 id가 'btn'인 요소를 가져와서 저장
+	//console.log(btn);
+	
+	btn.onclick = function()	// 버튼이 클릭되었을때
+	{
+		var sDate = document.getElementById('startDate');
+		var eDate = document.getElementById('endDate');
+		
+		console.log(sDate.value);
+		console.log(eDate.value);
+		
+		var startDate = new Date (sDate.value);	// 가져온 값들을 date형으로 바꿔서 변수에 저장
+		var endDate = new Date (eDate.value);
+		
+		var diff = endDate - startDate;
+		alert(diff); 					// alert = 메시지창
+		
+		var diff2 = diff/(1000*60*60*24);
+		alert(diff2 + '일 차이');
+		
+
+		
+	}
+}
+	
+	
+		
+</script>
+
+</head>
+<body>
+		시작일 : <input type='date'  id='startDate'> 
+		~
+		종료일  : <input type='date' id='endDate'> 
+		
+		<input type='button' id='btn' value='여행일정'>
+</body>
+</html>

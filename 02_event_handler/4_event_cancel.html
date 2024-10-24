@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title> 이벤트 처리 취소</title>
+		
+		<style type="text/css">
+		
+		#outer { background : pink; }
+		#inner { background : green; }
+		
+		</style>
+		
+		<script>
+		/* 
+			버블링 : 이벤트의 부모요소에 전달되는 단계
+		
+				- stopPropagation() : 이벤트 전달 취소
+				- preventDefault()  : 이벤트 본래의 동작 취소
+		*/
+		window.onload = function() 
+		{
+			var outer = document.getElementById('outer');
+			var inner = document.getElementById('inner');
+			
+			outer.onclick = function()
+			{
+				alert('outer 영역에서 이벤트 발생');	
+			}
+			
+			inner.onclick = function(evt)
+			{
+				alert('inner 영역에서 이벤트 발생');
+				evt.stopPropagation();	// 이벤트 버블링이 막힌다
+				evt.preventDefault();	// a태그 기능이 막힌다
+			}
+		}
+		/*
+			[참고] 자바스크립트의 함수의 특성
+			
+			// 함수를 선언
+			function method(a, b)
+			{
+			
+			}
+		
+			// 함수 호출
+			method(1,2);
+			method(1,2,3); --> // a=1, b=2, 3은그냥냅둔다
+		//	method(1);	   --> // a1, b=undefined
+		//*/
+		
+		</script>
+	</head>
+	<body>
+		<div id='outer'>
+			<p>바깥 부분</p>
+			<div id='inner'>
+				<a href='https://www.nate.com'>안쪽부분</a>
+			</div>
+		</div>
+	</body>
+</html>

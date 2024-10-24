@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> es6 인수 </title>
+<script>
+ 
+	// @ 0. 인수의 기본값(default) 지정
+   	function multiple( first, second=1 )			// second 의 값이 없을경우 1로 설정 (기본값)
+	{
+		return first * second;
+	}
+	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );			
+	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );		// 함수가 인자를 2개만 받기때문에 5는 버려진다
+	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 				// 인자 하나만 보내면 두번째 파라메터는 undefined 가 되어서 리턴값이 nan나온다
+	
+	// @ 1. 함수는 인자의 갯수를 체크하지 않는다
+	
+	
+	// @ 2. 가변길이 인수(...) = 배열
+	function sum(...nums)
+	{
+		let result = 0;
+		// 합산
+		for(let num of nums)
+		{
+			result += num;
+		}
+		return result;
+	}
+	document.writeln('합은 ' +  sum(1, 2, 3) + '<br/>' );
+	document.writeln('합은 ' +  sum(1, 2, 3, 4, 5) + '<br/>' );
+	document.writeln('합은 ' +  sum(1, 2, 3, 4, 5, 6) + '<br/>' );
+	document.writeln('합은 ' +  sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20) + '<br/>' );	 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

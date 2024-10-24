@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body
+{
+	display : flex;
+	align-items : center;
+	justify-content : center;
+	flex-direction : column;
+}
+#tbl
+{
+	border : 2px solid #6ab2ff;
+}
+
+td
+{
+	width	   : 100px;
+	height	   : 60px;
+	background : #fffd96;
+	color 	   : #fb00f4;
+}
+
+.first
+{
+	background : #6ab2ff;
+}

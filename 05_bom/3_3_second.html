@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3_3_second.html(서브)</title>
+		<script type="text/javascript">
+			window.onload = function()
+			{
+				let loc = fm.loc;
+				for(let i=0;i<loc.length;i++)
+					{
+						loc[i].onclick = function()
+						{
+							opener.frm.txt.value=this.value;
+						}
+					}
+			}
+		</script>
+	</head>
+<!-- ----------------------------------------------------- -->
+	<body>
+		<form name = 'fm'>
+			<input type='text' name='text' id='txt' class = 'txt'><br/><br/>
+			<input type='radio' name='loc' value = '가산'>가산<br/>
+			<input type='radio' name='loc' value = '판교'>판교<br/>
+			<input type='radio' name='loc' value = '부평'>부평<br/>
+		</form>
+	</body>
+</html>

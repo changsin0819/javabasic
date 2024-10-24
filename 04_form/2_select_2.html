@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title> 폼 예제 2</title>
+		
+	</head>
+		<script type="text/javascript">
+		window.onload = function()
+		{
+			// 'up' 버튼이 눌려졌을 때 
+			document.querySelector('#up').onclick = function()		
+			{
+				let idx = frm.play.selectedIndex;	//frm이름의 form태그안의 play이름의 태그에서 선택한 인덱스를 idx에 저장
+				let opt = frm.play.options;	        //frm이름의 form태그안의 play이름의 태그의 옵션들을 opt에 저장
+				
+				
+				if(idx>0)
+				{
+					let temp = opt[idx].text;           // opt의 idx번째의 텍스트를 임시로 temp에 저장
+					opt[idx].text = opt[idx-1].text;    // opt의 idx번째의 텍스트를 opt의 idx-1번째의 텍스트로 저장
+					opt[idx-1].text = temp;				// opt의 idx-1번째의 텍스트를 temp에 저장한 값으로 저장
+					opt[idx-1].selected = true;			// 맞바꾼 텍스트를 선택
+				}
+				
+				// 서클처리 해보기
+				if(idx=0)
+				{
+					
+				}
+			} 
+			
+			// 'down' 버튼이 눌려졌을 때
+			document.querySelector('#down').onclick = function()
+			{
+				let idx = frm.play.selectedIndex;	//frm이름의 form태그안의 play이름의 태그에서 선택한 인덱스를 idx에 저장
+				let opt = frm.play.options;	        //frm이름의 form태그안의 play이름의 태그의 옵션들을 opt에 저장
+				
+				
+				if(idx<opt.length-1)
+					{
+						let temp = opt[idx].text;           // opt의 idx번째의 텍스트를 임시로 temp에 저장
+						opt[idx].text = opt[idx+1].text;    // opt의 idx번째의 텍스트를 opt의 idx+1번째의 텍스트로 저장
+						opt[idx+1].text = temp;				// opt의 idx+1번째의 텍스트를 temp에 저장한 값으로 저장
+						opt[idx+1].selected = true;			// 맞바꾼 텍스트를 선택
+					}
+								
+				
+			}
+		}
+		</script>
+	<body>
+	
+	내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+	
+		<form name="frm">
+			<select name="play" size="4" >		<!-- multiple 속성을 넣으면 여러개 선택 가능 -->
+				<option selected> 숨쉬기 </option>
+				<option> 밥먹기 </option>
+				<option> 그냥있기 </option>
+				<option> 잠자기 </option>
+				<option> 술먹기 </option>
+				<option> 멍때리기 </option>
+			</select> <br>
+		
+			<input type="button" id='up'	value="▲"><br><br>
+			<input type="button" id='down'	value="▼"><br><br>
+		</form>
+	
+	</body> 
+</html>

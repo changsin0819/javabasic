@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3_참고.html</title>
+		
+		<script type="text/javascript">
+		
+			window.onload = function()
+			{
+				let btn   = document.querySelector('#btn');
+				let list  = document.querySelector('#list');
+				let items = document.querySelectorAll('#list > li');
+				
+				btn.onclick = function()
+				{
+					// [1] appendChild()
+					/* 
+					let litag = document.createElement('li');
+					let txt = document.createTextNode(new Date().toDateString());
+					
+					litag.appendChild(txt);	 // <li> xxxxxxxx </li>
+					list.appendChild(litag); 
+					*/ 
+					
+					// [2] append
+					let litag = document.createElement('li');
+					
+					litag.append(new Date().toDateString());	 // <li> xxxxxxxx </li>
+					list.append(litag);
+				}
+				
+				
+				for(let i=0;i<items.length; i++)
+				{
+					items[i].onclick = function()
+					{
+						/*
+							` 부모노드.removeChild(자식노드)	-> 삭제할 부모 노드가 나오고 자식노드가 나와야함
+							` 삭제할노드.remove()			-> 삭제할 노드를 중심으로 삭제
+						*/
+						/* list.removeChild(this); */ 
+						this.remove(); 
+					}
+				}
+			}
+		
+		</script>
+	</head>
+<!------------------------------------------>	
+	<body>
+	
+		<h2 id='btn'> 웹 프로그래밍 </h2>
+		
+		<ul id='list'>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JS</li>
+		</ul>
+	
+	</body>
+</html>
