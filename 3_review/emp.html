@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<title>emp.html</title>
+ <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+   <h4 class="text-primary">EMP</h4>
+  <form action="sever.jsp" class='form-inline' method='post'>
+     <div class= 'form-group'>
+    <label for="empno">사번</label>
+      <input type="text" class='form-control' id='empno'name='empno' placeholder="사번">
+    </div>
+    <div class= 'form-group'>
+    <label for="name">이름</label>
+      <input type="text" class='form-control' id='name' name='name' placeholder="이름">
+    </div>
+    <div class= 'form-group'>
+    <label for="job">업무</label>
+      <input type="text" class='form-control' id='job' name='job' placeholder="업무">
+    </div>
+    <div class= 'form-group'>
+    <label for="sal">월급</label>
+      <input type="text" class='form-control' id='sal' name='sal' placeholder="월급">      
+    </div>
+    <div class= 'form-group'>
+    <label for="deptno">부서번호</label>
+      <input type="text" class='form-control' id='deptno' name='deptno' placeholder="부서번호">
+     </div>
+     <div class= 'form-group'> 
+      <button type="submit" >제출</button>  
+  </div>
+</div>
+</form>
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!--  
+
+[1] 화면구성
+   -사번,이름,업무,월급, 부서번호를 입력받ㅇ서
+   서버에 전송할 수 있는 화면 구현
+   -[hint]form 태그이용
+
+ -->
